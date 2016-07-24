@@ -1,0 +1,17 @@
+md-content#home(flex layout="row" style="overflow-x: hidden;")
+	div(layout="column" flex )
+		div(flex="15")
+		div.margin-left-30(flex="90" style="overflow-x: hidden;")
+			md-grid-list(md-cols="4" md-row-height="1:1" layout="row"  style="overflow-x: hidden;")
+				md-grid-tile
+					md-card(layout="row")
+						thermocard(starttemp="69" endtemp="72" mode="" room="" layout-fill)
+				md-grid-tile
+					md-card(layout="row" layout-align="center center")
+						//- thermocard(startTemp="" endTemp="" mode="" room="" layout-fill)
+				md-grid-tile
+					md-card(layout="row" layout-align="center center")
+						//- thermocard(startTemp="" endTemp="" mode="" room="" layout-fill)
+				md-grid-tile
+					md-card(layout="row" layout-align="center center")
+						//- thermocard(startTemp="" endTemp="" mode="" room="" layout-fill)

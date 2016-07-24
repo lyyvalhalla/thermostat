@@ -1,0 +1,110 @@
+/* line 3, /Users/Valhalla/thermostat/app/scss/main.scss */
+body {
+  font-family: Lato, sans-serif; }
+
+/* line 7, /Users/Valhalla/thermostat/app/scss/main.scss */
+.material-icons {
+  display: inline-flex;
+  vertical-align: middle; }
+
+/* line 12, /Users/Valhalla/thermostat/app/scss/main.scss */
+.md-nav-bar {
+  height: 120px !important; }
+  /* line 15, /Users/Valhalla/thermostat/app/scss/main.scss */
+  .md-nav-bar #homeName {
+    text-transform: none;
+    margin-left: 30px; }
+
+/* line 21, /Users/Valhalla/thermostat/app/scss/main.scss */
+.md-nav-bar .md-button {
+  width: 100%;
+  min-height: 119px;
+  font-size: 20px; }
+
+/* line 28, /Users/Valhalla/thermostat/app/scss/main.scss */
+.material-icons.md-20 {
+  font-size: 20px; }
+
+/* line 29, /Users/Valhalla/thermostat/app/scss/main.scss */
+.material-icons.md-24 {
+  font-size: 24px; }
+
+/* line 30, /Users/Valhalla/thermostat/app/scss/main.scss */
+.material-icons.md-26 {
+  font-size: 26px; }
+
+/* line 31, /Users/Valhalla/thermostat/app/scss/main.scss */
+.material-icons.md-26 {
+  font-size: 26px; }
+
+/* line 32, /Users/Valhalla/thermostat/app/scss/main.scss */
+.material-icons.md-30 {
+  font-size: 30px; }
+
+/* line 33, /Users/Valhalla/thermostat/app/scss/main.scss */
+.material-icons.md-36 {
+  font-size: 36px; }
+
+/* line 34, /Users/Valhalla/thermostat/app/scss/main.scss */
+.material-icons.md-48 {
+  font-size: 48px; }
+
+/* line 35, /Users/Valhalla/thermostat/app/scss/main.scss */
+.material-icons.md-60 {
+  font-size: 60px; }
+
+/* line 37, /Users/Valhalla/thermostat/app/scss/main.scss */
+.material-icons.fg-orange {
+  color: #ff0000; }
+
+/* line 41, /Users/Valhalla/thermostat/app/scss/main.scss */
+.font-size-12 {
+  font-size: 12px !important; }
+
+/* line 45, /Users/Valhalla/thermostat/app/scss/main.scss */
+.font-size-13 {
+  font-size: 13px; }
+
+/* line 49, /Users/Valhalla/thermostat/app/scss/main.scss */
+.font-size-14 {
+  font-size: 14px; }
+
+/* line 53, /Users/Valhalla/thermostat/app/scss/main.scss */
+.font-size-15 {
+  font-size: 15px; }
+
+/* line 57, /Users/Valhalla/thermostat/app/scss/main.scss */
+.font-size-16 {
+  font-size: 16px; }
+
+/* line 61, /Users/Valhalla/thermostat/app/scss/main.scss */
+.font-size-17 {
+  font-size: 17px; }
+
+/* line 65, /Users/Valhalla/thermostat/app/scss/main.scss */
+.font-size-18 {
+  font-size: 18px; }
+
+/* line 69, /Users/Valhalla/thermostat/app/scss/main.scss */
+.font-size-19 {
+  font-size: 19px; }
+
+/* line 73, /Users/Valhalla/thermostat/app/scss/main.scss */
+.font-size-20 {
+  font-size: 20px; }
+
+/* line 77, /Users/Valhalla/thermostat/app/scss/main.scss */
+.font-size-22 {
+  font-size: 22px; }
+
+/* line 81, /Users/Valhalla/thermostat/app/scss/main.scss */
+.font-size-24 {
+  font-size: 24px; }
+
+/* line 85, /Users/Valhalla/thermostat/app/scss/main.scss */
+.font-size-26 {
+  font-size: 26px; }
+
+/* line 89, /Users/Valhalla/thermostat/app/scss/main.scss */
+.font-size-36 {
+  font-size: 36px; }

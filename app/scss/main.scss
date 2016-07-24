@@ -1,0 +1,111 @@
+@import "presets";
+
+body {
+	font-family: Lato, sans-serif;
+	height: 100%;
+	width: auto;
+	overflow-y: hidden;
+}
+
+
+thermocard {
+	width:100%;
+	height: 100%;
+}
+
+#thermocard {
+	width:100%;
+	height: 100%;
+}
+
+
+.circumference {
+  
+  stroke: rgba(255, 255, 255, 0.5);;
+  stroke-width: 5px;
+
+}
+
+.dot circle:hover {
+  cursor: pointer;
+}
+
+.dot circle {
+  fill: lightsteelblue;
+}
+
+.dot circle.dragging {
+  fill: red;
+}
+
+#first {
+	/*fill: blue;*/
+	fill: white;
+}
+
+#second {
+	fill: white;
+}
+
+
+
+
+
+
+
+
+
+
+.material-icons {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.middle-align {
+	display: inline-flex;
+	vertical-align: middle;
+}
+
+.md-nav-bar {
+	height: 120px !important;
+
+	#homeName {
+		text-transform: none;
+		margin-left: 30px;
+	}
+}
+
+.md-nav-bar .md-button {
+	width: 100%;
+	min-height: 119px;
+	font-size: 20px;
+}
+
+#home {
+	md-grid-list {
+		/*overflow-x: hidden;*/
+		width: 1900px;
+		height: 100%;
+	}
+
+	md-card {
+		height: 90%;
+		width: 90%;
+		border-radius: 10px;
+	}
+}
+
+
+.material-icons.md-20 { font-size: 20px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-26 { font-size: 26px; }
+.material-icons.md-26 { font-size: 26px; }
+.material-icons.md-30 { font-size: 30px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-60 { font-size: 60px; }
+
+.material-icons.fg-orange {
+	color: $orange;
+}
+

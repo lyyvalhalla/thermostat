@@ -1,0 +1,29 @@
+doctype html
+html
+	head 
+		link(rel="stylesheet", href="css/main.css")
+		link(rel="stylesheet", href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc.5/angular-material.min.css")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+		title biubiubiu ::)
+	body(ng-app="App" layout="column")
+		script(src="bundle.js")
+		script(src="http://d3js.org/d3.v3.min.js")
+		div(ng-controller="AppController" layout="column" flex)
+			md-content(flex layout="column")
+				md-nav-bar(md-selected-nav-item="currentItem" nav-bar-aria-label="navigation links")
+					md-nav-item(md-nav-click="goto('')" name="title" style="width: 25%") 
+						div#homeName 
+							span Yiyang's Home
+							i.material-icons.md-36 arrow_drop_down
+					md-nav-item(md-nav-click="goto('')" name="sts" style="width: 30%")
+						div#homeName(flex layout="row")
+							div(flex="40" layout="column") 
+								div New York
+								div.font-size-14 Fri, July 22
+							div(flex="25")
+								i.material-icons.md-48.fg-orange wb_sunny
+							div.font-size-36.margin-top-10(flex="25") 70F
+					md-nav-item(md-nav-click="goto('home')" name="rms" style="width: 15%") Rooms
+					md-nav-item(md-nav-click="goto('history')" name="hist" style="width: 15%") History
+					md-nav-item(md-nav-click="goto('')" name="stsss" style="width: 15%") Setting
+				div(ui-view flex layout="row")
