@@ -21,7 +21,7 @@ thermocard {
 
 .circumference {
   
-  stroke: rgba(255, 255, 255, 0.5);;
+  stroke: rgba(255, 255, 255, 0.5);
   stroke-width: 5px;
 
 }
@@ -35,7 +35,8 @@ thermocard {
 }
 
 .dot circle.dragging {
-  fill: red;
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 5px;
 }
 
 #first {

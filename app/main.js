@@ -50,24 +50,29 @@ app
 			},
 			link: function($scope, elem) {
 
-				var warm = "#FFA717";
-				var cool = "#03BEEF";
+				var color;
+				var cX = 0;
+				var cY = 0;
 
 
-
-				var tempToPo = function(t, radius) {
+				var tempToPo = function(t, radius, centerX, centerY) {
 					if (t >= 70) {
 						var i = t - 70;
 					} else {
 						var i = 10 + (10 - (70-t));
 					}
 
-					var x = 0 + radius * Math.sin(2 * Math.PI * i / 20);
-    			var y = 0 - radius * Math.cos(2 * Math.PI * i / 20);   
+					var x = centerX + radius * Math.sin(2 * Math.PI * i / 20);
+    			var y = centerY - radius * Math.cos(2 * Math.PI * i / 20);   
     			return {x, y};
 				};
 
 				var iniThermo = function(e) {
+						if ($scope.mode ==='warm') {
+							color = "#FFA717";
+						} else if ($scope.mode==='cool') {
+							color = "#03BEEF";
+						}
 					
 						var element = d3.select(elem[0].firstChild);
 			
@@ -97,28 +102,67 @@ app
 						  .attr("height", height)
 						  .attr("rx", 10)
 						  .attr("ry", 10)
-						  .style("fill", warm)
+						  .style("fill", color)
 						  .attr("transform", "translate(" + -width/2 + "," + -height/2 + ")");
 
 
-						var container = svg.append("g");
+						var title = svg.append('text')
+							.attr("x", 0)
+							.attr("y", -radius)
+							.style({"fill": "#fff", "text-anchor": "middle"})
+							.attr("font-size", "30px")
+							.text($scope.room);
+
+						var container = svg.append("g")
+							.attr("transform", "translate(" + cX + "," + 45 + ")");
 
 						var circumference = container.append('circle')
 						  .attr('r', radius)
 						  .attr('class', 'circumference')
-						  .attr("fill", warm);
+						  .attr("fill", color);
 
-						handle = [{
-						  x: tempToPo($scope.starttemp, radius).x,
-						  y: tempToPo($scope.starttemp, radius).y,
+						var radial = d3.svg.arc()
+							.innerRadius(radius-3)
+					    .outerRadius(radius+3)
+
+					  var bg = container.append("path")
+						    .style("fill", color)
+						    .attr("class", "background")
+
+						var arc = d3.svg.arc()
+					    .innerRadius(radius-3)
+					    .outerRadius(radius+3);
+
+					  var fg = container.append("path")
+						    .style("fill", "#fff")
+						    .attr("class", "foreground")
+
+						var handle = [{
+						  x: tempToPo($scope.starttemp, radius, cX, cY).x,
+						  y: tempToPo($scope.starttemp, radius, cX, cY).y,
+						  temp: $scope.starttemp,
 						  id: 'first'
 						}, {
-						  x: tempToPo($scope.endtemp, radius).x,
-						  y: tempToPo($scope.endtemp, radius).y,
+						  x: tempToPo($scope.endtemp, radius, cX, cY).x,
+						  y: tempToPo($scope.endtemp, radius, cX, cY).y,
+						  temp: $scope.endtemp,
 						  id: 'second'
 						}];
 
-						circle = container.append("g")
+						var aa =  Math.atan2(handle[0].y,handle[0].x)-Math.atan2(-radius, cX);
+						var bb =  Math.atan2(handle[1].y,handle[1].x)-Math.atan2(-radius, cY);
+
+						var da = Math.atan2(tempToPo(63, radius, cX, cY).y,tempToPo(63, radius, cX, cY).x)-Math.atan2(-radius, cX);
+						var db = Math.atan2(tempToPo(77, radius, cX, cY).y,tempToPo(77, radius, cX, cY).x)-Math.atan2(-radius, cY);
+
+					  radial
+					    .startAngle(da)
+					    .endAngle(db);
+
+					  bg
+					    .attr("d", radial);
+
+						var circle = container.append("g")
 						  .attr("class", "dot")
 						    .selectAll('circle')
 						  .data(handle)
@@ -129,16 +173,15 @@ app
 						  .attr("id", function(d) { return d.id;})
 						  .call(drag);
 
-						var aa =  Math.atan2(handle[0].y,handle[0].x)-Math.atan2(-radius, 0);
-						var bb =  Math.atan2(handle[1].y,handle[1].x)-Math.atan2(-radius, 0);
-
-						var arc = d3.svg.arc()
-						    .innerRadius(97)
-						    .outerRadius(103)
-						 
-						var fg = container.append("path")
-						    .style("fill", "#fff")
-						    .attr("class", "foreground")
+						var tempTitle = container.selectAll('text')
+							.data(handle)
+							.enter()
+							.append("text")
+							.attr("x", function(d) {console.log(d); return d.x;})
+						  .attr("y", function(d) { return d.y;})
+						  .attr("dy", "0.3em")
+						  .style({"fill": color, "text-anchor": "middle", "font-size": "20px"})
+						  .text(function(d) {return d.temp;})
 
 						function dragstarted(d) {
 						  d3.event.sourceEvent.stopPropagation();
@@ -182,28 +225,28 @@ app
 						        .attr("cx", d.x = d.x)
 						        .attr("cy", d.y = d.y);
 						    }
-						  } else if (handle[0].x >= -100 && handle[0].y >= 0) {
-						    d.x = -100;
-						    d.y = 0;  
+						  } else if (handle[0].x >= -170 && handle[0].y >= -15) {
+						    d.x = -170;
+						    d.y = -15;  
 						    d3.select(this)
 						        .attr("cx", d.x)
 						        .attr("cy", d.y);
-						  } else if (handle[1].x <= 25 && handle[1].y >= 95) {
-						  	d.x = 20;
-						    d.y = 96;  
+						  } else if (handle[1].x <= 150 && handle[1].y >= 80) {
+						  	d.x = 150;
+						    d.y = 80;  
 						    d3.select(this)
 						        .attr("cx", d.x)
 						        .attr("cy", d.y);
 						  }
-						  console.log(handle[1].x + "; " +handle[1].y )
+						  console.log(handle[0].x + "; " +handle[0].y )
 
 						  var bIntersect = [];
-						  bIntersect = intersection(0, 0, 100,  handle[1].x, handle[1].y, 20);
+						  bIntersect = intersection(cX, cY, radius,  handle[1].x, handle[1].y, 20);
 						  var bx = bIntersect[1];
 						  var by = bIntersect[3];
 
 						  var aIntersect = [];
-						  aIntersect = intersection(0, 0, 100,  handle[0].x, handle[0].y, 20);
+						  aIntersect = intersection(cX, cY, radius,  handle[0].x, handle[0].y, 20);
 						  var ax = aIntersect[0];
 						  var ay = aIntersect[2];
 
