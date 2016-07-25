@@ -355,7 +355,7 @@ thermocard {
 /* line 61, /Users/Valhalla/thermostat/app/scss/main.scss */
 .md-nav-bar {
   style: none;
-  height: 120px !important; }
+  height: 110px !important; }
   /* line 65, /Users/Valhalla/thermostat/app/scss/main.scss */
   .md-nav-bar .md-button:not([disabled]).md-focused {
     background-color: none !important; }
@@ -405,8 +405,8 @@ md-nav-ink-bar {
 /* line 114, /Users/Valhalla/thermostat/app/scss/main.scss */
 #home md-grid-list {
   /*overflow-x: hidden;*/
-  width: 1900px;
-  height: 100%; }
+  width: 185vw;
+  height: 70vh; }
 
 /* line 120, /Users/Valhalla/thermostat/app/scss/main.scss */
 #home md-card {

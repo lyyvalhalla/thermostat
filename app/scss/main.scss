@@ -60,7 +60,7 @@ thermocard {
 
 .md-nav-bar {
 	style: none;
-	height: 120px !important;
+	height: 110px !important;
 
 	.md-button:not([disabled]).md-focused {
 		background-color: none !important;
@@ -113,8 +113,8 @@ md-nav-ink-bar {
 #home {
 	md-grid-list {
 		/*overflow-x: hidden;*/
-		width: 1900px;
-		height: 100%;
+		width: 185vw;
+		height: 70vh;
 	}
 
 	md-card {
