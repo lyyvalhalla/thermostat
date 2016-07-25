@@ -12,19 +12,34 @@ html
 		div(ng-controller="AppController" layout="column" flex)
 			md-content(flex layout="column")
 				md-nav-bar(md-selected-nav-item="currentItem" nav-bar-aria-label="navigation links")
-					md-nav-item(md-nav-click="goto('')" name="title" style="width: 25%") 
-						div#homeName 
-							span Yiyang's Home
-							i.material-icons.md-36 arrow_drop_down
-					md-nav-item(md-nav-click="goto('')" name="sts" style="width: 30%")
-						div#homeName(flex layout="row")
+					md-nav-item#homeName(md-nav-click="" name="title" style="width: 20%") 
+						md-menu
+							div(ng-click="$mdOpenMenu()")  
+								span Yiyang's Home 
+								i.material-icons.md-26 arrow_drop_down
+							md-menu-content
+								md-button Vacation House
+								md-button Parents' Home
+					md-nav-item#homeName(md-nav-click="" name="rms" style="width: 15%")
+						md-menu
+							div(ng-click="$mdOpenMenu()")  
+								span Rooms 
+								i.material-icons.md-26 arrow_drop_down
+							md-menu-content
+									md-button(ng-repeat="n in roomData")
+										| {{n}}
+					md-nav-item#homeName(md-nav-click="goto('')" name="sts" style="width: 35%")
+						div(flex layout="row")
 							div(flex="40" layout="column") 
 								div New York
 								div.font-size-14 Fri, July 22
 							div(flex="25")
 								i.material-icons.md-48.fg-orange wb_sunny
 							div.font-size-36.margin-top-10(flex="25") 70F
-					md-nav-item(md-nav-click="goto('home')" name="rms" style="width: 15%") Rooms
-					md-nav-item(md-nav-click="goto('history')" name="hist" style="width: 15%") History
-					md-nav-item(md-nav-click="goto('')" name="stsss" style="width: 15%") Setting
+					md-nav-item(md-nav-click="goto('history')" name="hist" style="width: 15%") 
+						i.material-icons.md-24 timeline
+						span  History
+					md-nav-item(md-nav-click="goto('setting')" name="stsss" style="width: 15%") 
+						i.material-icons.md-24 settings
+						span  Setting
 				div(ui-view flex layout="row")

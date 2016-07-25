@@ -48,15 +48,6 @@ thermocard {
 	fill: white;
 }
 
-
-
-
-
-
-
-
-
-
 .material-icons {
   display: inline-flex;
   vertical-align: middle;
@@ -68,12 +59,28 @@ thermocard {
 }
 
 .md-nav-bar {
+	style: none;
 	height: 120px !important;
+}
 
-	#homeName {
-		text-transform: none;
-		margin-left: 30px;
+#homeName {
+	.md-button.md-accent {
+		color: $grey !important;
+	}	
+	.md-button.md-focused {
+		background-color: none !important;
 	}
+}
+.md-button.md-focused {
+		background-color: none !important;
+	}
+.md-button:not([disabled]).md-focused {
+		background-color: none !important;
+	}
+
+
+md-nav-ink-bar {
+	height: 0 !important;
 }
 
 .md-nav-bar .md-button {
@@ -109,4 +116,17 @@ thermocard {
 .material-icons.fg-orange {
 	color: $orange;
 }
+.material-icons.fg-grey {
+	color: $grey;
+}
+
+.menuDrop div{
+	display: block;
+	color:black;
+	padding:0px;
+	margin-top:50px;
+  border:0px;
+  transition: all linear 40s;
+}
+
 

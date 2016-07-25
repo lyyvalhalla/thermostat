@@ -14,8 +14,8 @@ app
 	.config(['$stateProvider', function($stateProvider) {
 		$stateProvider
 			.state('index', {
-				url: '/',
-				templateUrl: 'index.html'
+				url: '',
+				templateUrl: 'home.html'
 			})
 			.state('home', {
 				url: '/home',
@@ -24,15 +24,24 @@ app
 			.state('history', {
 				url: '/history',
 				templateUrl: 'history.html'
+			})
+			.state('setting', {
+				url: '/setting',
+				templateUrl: 'setting.html'
 			});
 
 	
 	}])
 	.controller('AppController', function($scope, $state, $anchorScroll, $location, $timeout) {
 		$scope.msg = "it owrksss!";
-		console.log($scope.msg);
-
 		$scope.currentItem = 'rms';
+
+		$scope.roomData = [
+			"Living Room",
+			"Hallway",
+			"Bedroom",
+			"Guest Room"
+		];
 
 		$scope.goto = function(str) {
 			$state.go(str);
@@ -117,11 +126,21 @@ app
 
 
 						var title = svg.append('text')
+							.attr("id", "roomTitle")
 							.attr("x", 0)
 							.attr("y", -radius)
 							.style({"fill": "#fff", "text-anchor": "middle"})
 							.attr("font-size", "30px")
 							.text($scope.room);
+
+						var schedule = svg
+					  	.append("svg:image")
+							.attr("id", "on")
+							.attr('width', 23)
+   						.attr('height', 23)
+						  .attr("x", function(){return title.node().getBBox().width/2+10;})
+							.attr("y", -radius-23)
+					    .attr("xlink:href", "http://yiyang.io/assets/calendar.svg");
 
 						var container = svg.append("g")
 							.attr("transform", "translate(" + cX + "," + 50 + ")");
@@ -172,8 +191,6 @@ app
 					  bg
 					    .attr("d", radial);
 
-
-					   console.log($scope.mode)
 					  if ($scope.mode !== 'off') {
 					  	var circle = container.append("g")
 							  .attr("class", "dot")
@@ -225,54 +242,53 @@ app
 							.text($scope.currenttemp);
 
 
-						  var coolImg = container
-						  	.append("svg:image")
-								.attr("id", "on")
-								.attr('width', 50)
-	   						.attr('height', 50)
-							  .attr("x", function() {return tempToPo(min+1, radius, cX, cY).x-15;})
-						    .attr("y", function() {return tempToPo(min+1, radius, cX, cY).y;})
-						    .attr("xlink:href", function(d) {
-						    	if ($scope.mode === 'cool') {
-						    		return "http://yiyang.io/assets/cool.svg";
-						    	} else {
-						    		return "http://yiyang.io/assets/cooloff.svg";
-						    	}
-						    })
-						    .on('click', function(){
-						    	if ($scope.mode === 'cool') {
-						    		$scope.mode = 'off';
-						    	} else {
-						    		$scope.mode = 'cool';
-						    	}
-						    	element.selectAll('svg').remove();
-						    	iniThermo(e);
-						    });
+				  var coolImg = container
+				  	.append("svg:image")
+						.attr("id", "on")
+						.attr('width', 50)
+ 						.attr('height', 50)
+					  .attr("x", function() {return tempToPo(min+1, radius, cX, cY).x-15;})
+				    .attr("y", function() {return tempToPo(min+1, radius, cX, cY).y;})
+				    .attr("xlink:href", function(d) {
+				    	if ($scope.mode === 'cool') {
+				    		return "http://yiyang.io/assets/cool.svg";
+				    	} else {
+				    		return "http://yiyang.io/assets/cooloff.svg";
+				    	}
+				    })
+				    .on('click', function(){
+				    	if ($scope.mode === 'cool') {
+				    		$scope.mode = 'off';
+				    	} else {
+				    		$scope.mode = 'cool';
+				    	}
+				    	element.selectAll('svg').remove();
+				    	iniThermo(e);
+				    });
 
 					  var warmImg = container
-						  	.append("svg:image")
-								.attr("id", "on")
-								.attr('width', 50)
-	   						.attr('height', 50)
-							  .attr("x", function() {return tempToPo(max-1, radius, cX, cY).x-30;})
-						    .attr("y", function() {return tempToPo(max-1, radius, cX, cY).y;})
-						    .attr("xlink:href", function(d) {
-						    	if ($scope.mode === 'warm') {
-						    		return "http://yiyang.io/assets/warm.svg";
-						    	} else {
-						    		return "http://yiyang.io/assets/warmoff.svg";
-						    	}
-						    })
-						    .on('click', function(){
-						    	if ($scope.mode === 'warm') {
-						    		$scope.mode = 'off';
-						    	} else {
-						    		$scope.mode = 'warm';
-						    	}
-						    	element.selectAll('svg').remove();
-						    	iniThermo(e);
-						    });
-
+					  	.append("svg:image")
+							.attr("id", "on")
+							.attr('width', 50)
+   						.attr('height', 50)
+						  .attr("x", function() {return tempToPo(max-1, radius, cX, cY).x-30;})
+					    .attr("y", function() {return tempToPo(max-1, radius, cX, cY).y;})
+					    .attr("xlink:href", function(d) {
+					    	if ($scope.mode === 'warm') {
+					    		return "http://yiyang.io/assets/warm.svg";
+					    	} else {
+					    		return "http://yiyang.io/assets/warmoff.svg";
+					    	}
+					    })
+					    .on('click', function(){
+					    	if ($scope.mode === 'warm') {
+					    		$scope.mode = 'off';
+					    	} else {
+					    		$scope.mode = 'warm';
+					    	}
+					    	element.selectAll('svg').remove();
+					    	iniThermo(e);
+					    });
 
 						function dragstarted(d) {
 						  d3.event.sourceEvent.stopPropagation();
