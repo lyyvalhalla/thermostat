@@ -300,7 +300,7 @@
 /*end of fonts*/
 /* line 3, /Users/Valhalla/thermostat/app/scss/main.scss */
 body {
-  font-family: Lato, sans-serif;
+  font-family: 'Lato', sans-serif;
   height: 100%;
   width: auto;
   overflow-y: hidden; }

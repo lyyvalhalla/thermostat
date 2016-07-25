@@ -41,38 +41,47 @@ app
 	});
 
 
+
 app
-	.directive('thermocard', function($timeout) {
+	.directive('thermocard', function($timeout, $state) {
 		return {
 			restrict: 'E',
 			template: '<div id="thermocard"></div>',
-			scope: {starttemp : '@', endtemp: '@', mode: '@', room: '@'},
+			scope: {starttemp : '@', endtemp: '@', mode: '@', room: '@', currenttemp: '@'},
 			controller: function($scope, $timeout) {				
 			},
 			link: function($scope, elem) {
-
+				
 				var color;
 				var cX = 0;
 				var cY = 0;
-
+				var interval = 30;
+				var min = 60, max = 80;
 
 				var tempToPo = function(t, radius, centerX, centerY) {
 					if (t >= 70) {
 						var i = t - 70;
 					} else {
-						var i = 10 + (10 - (70-t));
+						var i = interval/2 + (interval/2 - (70-t));
 					}
 
-					var x = centerX + radius * Math.sin(2 * Math.PI * i / 20);
-    			var y = centerY - radius * Math.cos(2 * Math.PI * i / 20);   
+					var x = centerX + radius * Math.sin(2 * Math.PI * i / interval);
+    			var y = centerY - radius * Math.cos(2 * Math.PI * i / interval);   
     			return {x, y};
 				};
+
+				var poToTemp = function(x, y, radius, centerX, centerY) {
+					 var i =  Math.asin((x - centerX)/radius)/2/Math.PI*interval + 70;
+					 return i;
+				}
 
 				var iniThermo = function(e) {
 						if ($scope.mode ==='warm') {
 							color = "#FFA717";
 						} else if ($scope.mode==='cool') {
 							color = "#03BEEF";
+						} else if ($scope.mode ==='off') {
+							color = "#4a4a4a";
 						}
 					
 						var element = d3.select(elem[0].firstChild);
@@ -82,7 +91,7 @@ app
 						    twoPi = 2 * Math.PI;
 
 						var radius = width/2*0.8;
-						// var circumference_r = 100;
+						
 
 						var drag = d3.behavior.drag()
 						  .origin(function(d) { return d; })
@@ -115,7 +124,7 @@ app
 							.text($scope.room);
 
 						var container = svg.append("g")
-							.attr("transform", "translate(" + cX + "," + 45 + ")");
+							.attr("transform", "translate(" + cX + "," + 50 + ")");
 
 						var circumference = container.append('circle')
 						  .attr('r', radius)
@@ -128,7 +137,7 @@ app
 
 					  var bg = container.append("path")
 						    .style("fill", color)
-						    .attr("class", "background")
+						    .attr("class", "background");
 
 						var arc = d3.svg.arc()
 					    .innerRadius(radius-3)
@@ -153,8 +162,8 @@ app
 						var aa =  Math.atan2(handle[0].y,handle[0].x)-Math.atan2(-radius, cX);
 						var bb =  Math.atan2(handle[1].y,handle[1].x)-Math.atan2(-radius, cY);
 
-						var da = Math.atan2(tempToPo(63, radius, cX, cY).y,tempToPo(63, radius, cX, cY).x)-Math.atan2(-radius, cX);
-						var db = Math.atan2(tempToPo(77, radius, cX, cY).y,tempToPo(77, radius, cX, cY).x)-Math.atan2(-radius, cY);
+						var da = Math.atan2(tempToPo(min, radius, cX, cY).y,tempToPo(min, radius, cX, cY).x)-Math.atan2(-radius, cX);
+						var db = Math.atan2(tempToPo(max, radius, cX, cY).y,tempToPo(max, radius, cX, cY).x)-Math.atan2(-radius, cY);
 
 					  radial
 					    .startAngle(da)
@@ -163,26 +172,107 @@ app
 					  bg
 					    .attr("d", radial);
 
-						var circle = container.append("g")
-						  .attr("class", "dot")
-						    .selectAll('circle')
-						  .data(handle)
-						    .enter().append("circle")
-						  .attr("r", 20)
-						  .attr("cx", function(d) { return d.x;})
-						  .attr("cy", function(d) { return d.y;})
-						  .attr("id", function(d) { return d.id;})
-						  .call(drag);
 
-						var tempTitle = container.selectAll('text')
-							.data(handle)
-							.enter()
-							.append("text")
-							.attr("x", function(d) {console.log(d); return d.x;})
-						  .attr("y", function(d) { return d.y;})
-						  .attr("dy", "0.3em")
-						  .style({"fill": color, "text-anchor": "middle", "font-size": "20px"})
-						  .text(function(d) {return d.temp;})
+					   console.log($scope.mode)
+					  if ($scope.mode !== 'off') {
+					  	var circle = container.append("g")
+							  .attr("class", "dot")
+							    .selectAll('circle')
+							  .data(handle)
+							    .enter().append("circle")
+							  .attr("r", 20)
+							  .attr("cx", function(d) { return d.x;})
+							  .attr("cy", function(d) { return d.y;})
+							  .attr("id", function(d) { return d.id;})
+							  .call(drag);
+
+							var tempTitle = container.selectAll('text')
+								.data(handle)
+								.enter()
+								.append("text")
+								.attr("class", "tempTitle")
+								.attr("id", function(d) {return d.id;})
+								.attr("x", function(d) { return d.x;})
+							  .attr("y", function(d) { return d.y;})
+							  .attr("dy", "0.3em")
+							  .style({"fill": color, "text-anchor": "middle", "font-size": "20px", "font-weight": 600})
+							  .text(function(d) {return d.temp;});
+					  }
+
+				  	var currentConfig = container
+							.append('text')
+							.attr("id", "currentTemp")
+							.attr("x", -20)
+							.attr("y", cY+50)
+							.style({"fill": "#fff", "text-anchor": "middle", "font-size": "30px", "font-weight": 600})
+							.text("F");
+
+						var secondConfig = container
+							.append('text')
+							.attr("id", "currentTemp")
+							.attr("x", 15)
+							.attr("y", cY+50)
+							.style({"fill": "#fff", "text-anchor": "middle", "font-size": "26px", "font-weight": 300})
+							.text("/  C");
+
+						 
+						var currentTemp = container
+							.append('text')
+							.attr("id", "currentTemp")
+							.attr("x", cX)
+							.attr("y", cY)
+							.style({"fill": "#fff", "text-anchor": "middle", "font-size": "110px"})
+							.text($scope.currenttemp);
+
+
+						  var coolImg = container
+						  	.append("svg:image")
+								.attr("id", "on")
+								.attr('width', 50)
+	   						.attr('height', 50)
+							  .attr("x", function() {return tempToPo(min+1, radius, cX, cY).x-15;})
+						    .attr("y", function() {return tempToPo(min+1, radius, cX, cY).y;})
+						    .attr("xlink:href", function(d) {
+						    	if ($scope.mode === 'cool') {
+						    		return "http://yiyang.io/assets/cool.svg";
+						    	} else {
+						    		return "http://yiyang.io/assets/cooloff.svg";
+						    	}
+						    })
+						    .on('click', function(){
+						    	if ($scope.mode === 'cool') {
+						    		$scope.mode = 'off';
+						    	} else {
+						    		$scope.mode = 'cool';
+						    	}
+						    	element.selectAll('svg').remove();
+						    	iniThermo(e);
+						    });
+
+					  var warmImg = container
+						  	.append("svg:image")
+								.attr("id", "on")
+								.attr('width', 50)
+	   						.attr('height', 50)
+							  .attr("x", function() {return tempToPo(max-1, radius, cX, cY).x-30;})
+						    .attr("y", function() {return tempToPo(max-1, radius, cX, cY).y;})
+						    .attr("xlink:href", function(d) {
+						    	if ($scope.mode === 'warm') {
+						    		return "http://yiyang.io/assets/warm.svg";
+						    	} else {
+						    		return "http://yiyang.io/assets/warmoff.svg";
+						    	}
+						    })
+						    .on('click', function(){
+						    	if ($scope.mode === 'warm') {
+						    		$scope.mode = 'off';
+						    	} else {
+						    		$scope.mode = 'warm';
+						    	}
+						    	element.selectAll('svg').remove();
+						    	iniThermo(e);
+						    });
+
 
 						function dragstarted(d) {
 						  d3.event.sourceEvent.stopPropagation();
@@ -190,7 +280,12 @@ app
 						    .classed("dragging", true);
 						}
 
-						function dragged(d) {  
+
+						function dragged(d) { 
+							
+							svg.selectAll(".tempTitle").filter(function(f) {
+							  	return f.id == d.id;
+							  }).text(""); 
 
 						  d_from_origin = Math.sqrt(Math.pow(d3.event.x,2)+Math.pow(d3.event.y,2));
 						  
@@ -232,14 +327,14 @@ app
 						    d3.select(this)
 						        .attr("cx", d.x)
 						        .attr("cy", d.y);
-						  } else if (handle[1].x <= 150 && handle[1].y >= 80) {
+						  } else if (handle[1].x <= 170 && handle[1].y >= 0) {
 						  	d.x = 150;
 						    d.y = 80;  
 						    d3.select(this)
 						        .attr("cx", d.x)
 						        .attr("cy", d.y);
 						  }
-						  console.log(handle[0].x + "; " +handle[0].y )
+						  console.log(handle[1].x + "; " +handle[1].y )
 
 						  var bIntersect = [];
 						  bIntersect = intersection(cX, cY, radius,  handle[1].x, handle[1].y, 20);
@@ -265,6 +360,13 @@ app
 						function dragended(d) {
 						  d3.select(this)
 						    .classed("dragging", false);
+
+						  svg.selectAll(".tempTitle").filter(function(f) {
+							  	return f.id == d.id;
+							  })
+							  .attr("x", function(f) { return d.x;})
+							  .attr("y", function(f) { return d.y;})
+						  	.text(parseInt(poToTemp(d.x, d.y, radius, cX, cY)));
 						}
 				}
 
@@ -275,10 +377,9 @@ app
 				
 				}, 100)
 
-
-
-
-				function intersection(x0, y0, r0, x1, y1, r1) {//credit to http://stackoverflow.com/questions/12219802/a-javascript-function-that-returns-the-x-y-points-of-intersection-between-two-ci
+				/* method to find intersection points on circle credits to 
+				http://stackoverflow.com/questions/12219802/a-javascript-function-that-returns-the-x-y-points-of-intersection-between-two-ci */
+				function intersection(x0, y0, r0, x1, y1, r1) {
 				    var a, dx, dy, d, h, rx, ry;
 				    var x2, y2;
 
@@ -311,28 +412,6 @@ app
 
 				    return [xi, xi_prime, yi, yi_prime];
 				}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 			}
 		}
 	});
