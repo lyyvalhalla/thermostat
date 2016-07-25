@@ -1,299 +1,299 @@
-/* line 8, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 9, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .bg-green {
-  background-color: #50E3C2; }
+  background-color: #8bc34a; }
 
-/* line 12, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 13, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .bg-orange {
   background-color: #FFA717; }
 
-/* line 16, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 17, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .bg-blue {
   background-color: #03BEEF; }
 
 /* end of colors */
-/* line 24, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 25, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-0 {
   margin-top: 0; }
 
-/* line 27, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 28, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-2 {
   margin-top: 2px; }
 
-/* line 30, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 31, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-5 {
   margin-top: 5px; }
 
-/* line 34, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 35, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-10 {
   margin-top: 10px; }
 
-/* line 38, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 39, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-15 {
   margin-top: 15px; }
 
-/* line 42, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 43, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-20 {
   margin-top: 20px; }
 
-/* line 46, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 47, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-25 {
   margin-top: 25px; }
 
-/* line 50, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 51, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-30 {
   margin-top: 30px; }
 
-/* line 54, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 55, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-35 {
   margin-top: 35px; }
 
-/* line 58, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 59, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-40 {
   margin-top: 40px; }
 
-/* line 62, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 63, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-50 {
   margin-top: 50px; }
 
-/* line 66, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 67, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-60 {
   margin-top: 50px; }
 
-/* line 70, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 71, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-75 {
   margin-top: 75px; }
 
-/* line 74, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 75, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-80 {
   margin-top: 80px; }
 
-/* line 78, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 79, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-100 {
   margin-top: 100px; }
 
-/* line 82, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 83, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-110 {
   margin-top: 110px; }
 
-/* line 86, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 87, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-120 {
   margin-top: 120px; }
 
-/* line 90, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 91, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-125 {
   margin-top: 125px; }
 
-/* line 94, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 95, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-200 {
   margin-top: 200px; }
 
-/* line 98, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 99, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-0 {
   margin: 0; }
 
-/* line 102, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 103, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-20-20 {
   margin-top: 20px;
   margin-bottom: 20px; }
 
-/* line 107, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 108, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-0-25 {
   margin: 0 25px; }
 
-/* line 111, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 112, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-0-35 {
   margin: 0 35px; }
 
-/* line 115, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 116, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-0-auto {
   margin: 0 auto; }
 
-/* line 119, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 120, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-left-minus-3 {
   margin-left: -3px; }
 
-/* line 123, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 124, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-left-minus-5 {
   margin-left: -5px; }
 
-/* line 127, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 128, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-left-0 {
   margin-left: 0; }
 
-/* line 131, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 132, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-left-5 {
   margin-left: 5px; }
 
-/* line 135, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 136, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-left-10 {
   margin-left: 10px; }
 
-/* line 139, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 140, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-left-15 {
   margin-left: 15px; }
 
-/* line 143, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 144, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-left-20 {
   margin-left: 20px; }
 
-/* line 147, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 148, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-left-25 {
   margin-left: 25px; }
 
-/* line 151, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 152, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-left-30 {
   margin-left: 30px; }
 
-/* line 155, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 156, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-left-35 {
   margin-left: 35px; }
 
-/* line 159, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 160, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-left-50 {
   margin-left: 50px; }
 
-/* line 163, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 164, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-left-60 {
   margin-left: 60px; }
 
-/* line 167, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 168, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-bottom-0 {
   margin-bottom: 0; }
 
-/* line 171, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 172, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-right-0 {
   margin-right: 0px; }
 
-/* line 176, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 177, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-right-5 {
   margin-right: 5px; }
 
-/* line 180, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 181, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-bottom-5 {
   margin-bottom: 5px; }
 
-/* line 184, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 185, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-bottom-10 {
   margin-bottom: 10px; }
 
-/* line 188, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 189, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-bottom-15 {
   margin-bottom: 15px; }
 
-/* line 192, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 193, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-bottom-20 {
   margin-bottom: 20px; }
 
-/* line 196, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 197, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-bottom-25 {
   margin-bottom: 25px; }
 
-/* line 200, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 201, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-bottom-30 {
   margin-bottom: 30px; }
 
-/* line 204, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 205, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-bottom-40 {
   margin-bottom: 40px; }
 
-/* line 208, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 209, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-bottom-60 {
   margin-bottom: 60px; }
 
-/* line 212, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 213, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-bottom-80 {
   margin-bottom: 80px; }
 
-/* line 216, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 217, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-minus-50 {
   margin-top: -50px; }
 
-/* line 220, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 221, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-minus-60 {
   margin-top: -60px; }
 
-/* line 224, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 225, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-top-minus-70 {
   margin-top: -70px; }
 
-/* line 228, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 229, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-right-minus-5 {
   margin-right: -5px; }
 
-/* line 232, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 233, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-right-5 {
   margin-right: 5px; }
 
-/* line 236, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 237, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-right-10 {
   margin-right: 10px; }
 
-/* line 240, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 241, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-right-15 {
   margin-right: 15px; }
 
-/* line 244, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 245, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-right-20 {
   margin-right: 20px; }
 
-/* line 248, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 249, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-right-50 {
   margin-right: 50px; }
 
-/* line 252, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 253, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .margin-right-100 {
   margin-right: 100px; }
 
 /* end margins */
-/* line 259, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 260, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .font-size-12 {
   font-size: 12px !important; }
 
-/* line 263, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 264, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .font-size-13 {
   font-size: 13px; }
 
-/* line 267, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 268, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .font-size-14 {
   font-size: 14px; }
 
-/* line 271, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 272, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .font-size-15 {
   font-size: 15px; }
 
-/* line 275, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 276, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .font-size-16 {
   font-size: 16px; }
 
-/* line 279, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 280, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .font-size-17 {
   font-size: 17px; }
 
-/* line 283, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 284, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .font-size-18 {
   font-size: 18px; }
 
-/* line 287, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 288, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .font-size-19 {
   font-size: 19px; }
 
-/* line 291, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 292, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .font-size-20 {
   font-size: 20px; }
 
-/* line 295, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 296, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .font-size-22 {
   font-size: 22px; }
 
-/* line 299, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 300, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .font-size-24 {
   font-size: 24px; }
 
-/* line 303, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 304, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .font-size-26 {
   font-size: 26px; }
 
-/* line 307, /Users/Valhalla/thermostat/app/scss/presets.scss */
+/* line 308, /Users/Valhalla/thermostat/app/scss/presets.scss */
 .font-size-36 {
   font-size: 36px; }
 
@@ -356,90 +356,100 @@ thermocard {
 .md-nav-bar {
   style: none;
   height: 120px !important; }
+  /* line 65, /Users/Valhalla/thermostat/app/scss/main.scss */
+  .md-nav-bar .md-button:not([disabled]).md-focused {
+    background-color: none !important; }
 
-/* line 67, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 70, /Users/Valhalla/thermostat/app/scss/main.scss */
+.md-button.md-accent {
+  color: #03BEEF; }
+
+/* line 74, /Users/Valhalla/thermostat/app/scss/main.scss */
+md-switch.md-checked ._md-bar {
+  background-color: #C4E3EB; }
+
+/* line 78, /Users/Valhalla/thermostat/app/scss/main.scss */
+md-switch.md-checked ._md-thumb {
+  background-color: #03BEEF; }
+
+/* line 83, /Users/Valhalla/thermostat/app/scss/main.scss */
 #homeName .md-button.md-accent {
   color: rgba(0, 0, 0, 0.54) !important; }
 
-/* line 70, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 86, /Users/Valhalla/thermostat/app/scss/main.scss */
 #homeName .md-button.md-focused {
   background-color: none !important; }
 
-/* line 74, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 91, /Users/Valhalla/thermostat/app/scss/main.scss */
+#home2Name .md-button.md-focused {
+  background-color: none !important; }
+
+/* line 95, /Users/Valhalla/thermostat/app/scss/main.scss */
 .md-button.md-focused {
   background-color: none !important; }
 
-/* line 77, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 98, /Users/Valhalla/thermostat/app/scss/main.scss */
 .md-button:not([disabled]).md-focused {
   background-color: none !important; }
 
-/* line 82, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 103, /Users/Valhalla/thermostat/app/scss/main.scss */
 md-nav-ink-bar {
   height: 0 !important; }
 
-/* line 86, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 107, /Users/Valhalla/thermostat/app/scss/main.scss */
 .md-nav-bar .md-button {
   width: 100%;
   min-height: 119px;
   font-size: 20px; }
 
-/* line 93, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 114, /Users/Valhalla/thermostat/app/scss/main.scss */
 #home md-grid-list {
   /*overflow-x: hidden;*/
   width: 1900px;
   height: 100%; }
 
-/* line 99, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 120, /Users/Valhalla/thermostat/app/scss/main.scss */
 #home md-card {
   height: 90%;
   width: 90%;
   border-radius: 10px; }
 
-/* line 107, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 128, /Users/Valhalla/thermostat/app/scss/main.scss */
 .material-icons.md-20 {
   font-size: 20px; }
 
-/* line 108, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 129, /Users/Valhalla/thermostat/app/scss/main.scss */
 .material-icons.md-24 {
   font-size: 24px; }
 
-/* line 109, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 130, /Users/Valhalla/thermostat/app/scss/main.scss */
 .material-icons.md-26 {
   font-size: 26px; }
 
-/* line 110, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 131, /Users/Valhalla/thermostat/app/scss/main.scss */
 .material-icons.md-26 {
   font-size: 26px; }
 
-/* line 111, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 132, /Users/Valhalla/thermostat/app/scss/main.scss */
 .material-icons.md-30 {
   font-size: 30px; }
 
-/* line 112, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 133, /Users/Valhalla/thermostat/app/scss/main.scss */
 .material-icons.md-36 {
   font-size: 36px; }
 
-/* line 113, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 134, /Users/Valhalla/thermostat/app/scss/main.scss */
 .material-icons.md-48 {
   font-size: 48px; }
 
-/* line 114, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 135, /Users/Valhalla/thermostat/app/scss/main.scss */
 .material-icons.md-60 {
   font-size: 60px; }
 
-/* line 116, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 137, /Users/Valhalla/thermostat/app/scss/main.scss */
 .material-icons.fg-orange {
   color: #FFA717; }
 
-/* line 119, /Users/Valhalla/thermostat/app/scss/main.scss */
+/* line 140, /Users/Valhalla/thermostat/app/scss/main.scss */
 .material-icons.fg-grey {
   color: rgba(0, 0, 0, 0.54); }
-
-/* line 123, /Users/Valhalla/thermostat/app/scss/main.scss */
-.menuDrop div {
-  display: block;
-  color: black;
-  padding: 0px;
-  margin-top: 50px;
-  border: 0px;
-  transition: all linear 40s; }

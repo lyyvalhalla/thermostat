@@ -5,22 +5,24 @@ html
 		link(rel="stylesheet", href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc.5/angular-material.min.css")
 		link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
 		link(rel="stylesheet", href='https://fonts.googleapis.com/css?family=Lato:300')
-		title biubiubiu ::)
+		title thermostat UI
 	body(ng-app="App" layout="column")
 		script(src="bundle.js")
 		script(src="http://d3js.org/d3.v3.min.js")
 		div(ng-controller="AppController" layout="column" flex)
 			md-content(flex layout="column")
 				md-nav-bar(md-selected-nav-item="currentItem" nav-bar-aria-label="navigation links")
-					md-nav-item#homeName(md-nav-click="" name="title" style="width: 20%") 
+					md-nav-item(md-nav-click="" name="switch" style="width: 5%")
+						md-switch(ng-model="allon" aria-label="switch all" ng-change="onChange(allon)") 
+					md-nav-item#homeName(md-nav-click="goto('home')" name="title" style="width: 20%") 
 						md-menu
-							div(ng-click="$mdOpenMenu()")  
-								span Yiyang's Home 
+							div(ng-click="$mdOpenMenu()")
+								span Linda's Home 
 								i.material-icons.md-26 arrow_drop_down
 							md-menu-content
-								md-button Vacation House
-								md-button Parents' Home
-					md-nav-item#homeName(md-nav-click="" name="rms" style="width: 15%")
+								md-button Linda's Home
+								md-button Boyfriend's Place
+					md-nav-item#home2Name(md-nav-click="goto('home')" name="rms" style="width: 15%")
 						md-menu
 							div(ng-click="$mdOpenMenu()")  
 								span Rooms 
@@ -28,12 +30,12 @@ html
 							md-menu-content
 									md-button(ng-repeat="n in roomData")
 										| {{n}}
-					md-nav-item#homeName(md-nav-click="goto('')" name="sts" style="width: 35%")
+					md-nav-item#homeName(md-nav-click="goto('home')" name="sts" style="width: 30%")
 						div(flex layout="row")
 							div(flex="40" layout="column") 
 								div New York
 								div.font-size-14 Fri, July 22
-							div(flex="25")
+							div(flex="20")
 								i.material-icons.md-48.fg-orange wb_sunny
 							div.font-size-36.margin-top-10(flex="25") 70F
 					md-nav-item(md-nav-click="goto('history')" name="hist" style="width: 15%") 
@@ -41,5 +43,5 @@ html
 						span  History
 					md-nav-item(md-nav-click="goto('setting')" name="stsss" style="width: 15%") 
 						i.material-icons.md-24 settings
-						span  Setting
+						span  Settings
 				div(ui-view flex layout="row")

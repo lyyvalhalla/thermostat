@@ -1,17 +1,20 @@
 md-content#home(flex layout="row" style="overflow-x: hidden;")
 	div(layout="column" flex )
 		div(flex="10")
-		div.margin-left-30(flex="90" style="overflow-x: hidden;")
+		div.margin-left-30(flex="70" style="overflow-x: hidden;")
 			md-grid-list(md-cols="4" md-row-height="1:1" layout="row"  style="overflow-x: hidden;")
 				md-grid-tile
 					md-card(layout="row")
-						thermocard(starttemp="66" endtemp="69" mode="warm" room="Living Room" currenttemp="68" config="" layout-fill)
+						thermocard(starttemp="66" endtemp="69" mode="warm" room="Living Room" currenttemp="68" config="" allon="allon" layout-fill)
 				md-grid-tile
 					md-card(layout="row" layout-align="center center")
-						thermocard(startTemp="71" endTemp="73" mode="cool" room="Hallway" currenttemp="80" config="" layout-fill)
+						thermocard(startTemp="71" endTemp="73" mode="cool" room="Hallway" currenttemp="80" config="" allon="allon" layout-fill)
 				md-grid-tile
 					md-card(layout="row" layout-align="center center")
-						thermocard(startTemp="68" endTemp="69" mode="off" room="Bedroom" currenttemp="75" config="" layout-fill)
+						thermocard(startTemp="68" endTemp="69" mode="off" room="Bedroom" currenttemp="75" config="" allon="allon" layout-fill)
 				md-grid-tile
 					md-card(layout="row" layout-align="center center")
 						//- thermocard(startTemp="" endTemp="" mode="" room="" layout-fill)
+		div(flex="20" layout="row" layout-align="center center")
+			div(type="image/svg+xml")
+				img(src="http://yiyang.io/assets/slider.svg")

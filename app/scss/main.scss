@@ -61,12 +61,33 @@ thermocard {
 .md-nav-bar {
 	style: none;
 	height: 120px !important;
+
+	.md-button:not([disabled]).md-focused {
+		background-color: none !important;
+	}
+}
+
+.md-button.md-accent {
+	color: $blue;
+}
+
+md-switch.md-checked ._md-bar {
+	background-color: $greenlight;
+}
+
+md-switch.md-checked ._md-thumb {
+	background-color: $blue;
 }
 
 #homeName {
 	.md-button.md-accent {
 		color: $grey !important;
 	}	
+	.md-button.md-focused {
+		background-color: none !important;
+	}
+}
+#home2Name {
 	.md-button.md-focused {
 		background-color: none !important;
 	}
@@ -119,14 +140,3 @@ md-nav-ink-bar {
 .material-icons.fg-grey {
 	color: $grey;
 }
-
-.menuDrop div{
-	display: block;
-	color:black;
-	padding:0px;
-	margin-top:50px;
-  border:0px;
-  transition: all linear 40s;
-}
-
-

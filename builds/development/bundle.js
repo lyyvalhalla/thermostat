@@ -35,17 +35,22 @@ app
 	.controller('AppController', function($scope, $state, $anchorScroll, $location, $timeout) {
 		$scope.msg = "it owrksss!";
 		$scope.currentItem = 'rms';
-
+		$scope.allon = true;
 		$scope.roomData = [
 			"Living Room",
 			"Hallway",
 			"Bedroom",
-			"Guest Room"
+			"Kitchen"
 		];
 
 		$scope.goto = function(str) {
 			$state.go(str);
 		};
+
+		$scope.onChange = function(st) {
+			$scope.allon = st;
+			console.log($scope.allon);
+		}
 
 	});
 
@@ -56,11 +61,10 @@ app
 		return {
 			restrict: 'E',
 			template: '<div id="thermocard"></div>',
-			scope: {starttemp : '@', endtemp: '@', mode: '@', room: '@', currenttemp: '@'},
-			controller: function($scope, $timeout) {				
+			scope: {starttemp : '@', endtemp: '@', mode: '@', room: '@', currenttemp: '@', allon: '@'},
+			controller: function($scope, $timeout) {		
 			},
 			link: function($scope, elem) {
-				
 				var color;
 				var cX = 0;
 				var cY = 0;
@@ -127,7 +131,7 @@ app
 
 						var title = svg.append('text')
 							.attr("id", "roomTitle")
-							.attr("x", 0)
+							.attr("x", -10)
 							.attr("y", -radius)
 							.style({"fill": "#fff", "text-anchor": "middle"})
 							.attr("font-size", "30px")
@@ -138,7 +142,7 @@ app
 							.attr("id", "on")
 							.attr('width', 23)
    						.attr('height', 23)
-						  .attr("x", function(){return title.node().getBBox().width/2+10;})
+						  .attr("x", function(){return title.node().getBBox().width/2;})
 							.attr("y", -radius-23)
 					    .attr("xlink:href", "http://yiyang.io/assets/calendar.svg");
 
@@ -301,7 +305,10 @@ app
 							
 							svg.selectAll(".tempTitle").filter(function(f) {
 							  	return f.id == d.id;
-							  }).text(""); 
+							  })
+								.attr("x", function(f) { return d.x;})
+							  .attr("y", function(f) { return d.y;})
+						  	.text(parseInt(poToTemp(d.x, d.y, radius, cX, cY)));
 
 						  d_from_origin = Math.sqrt(Math.pow(d3.event.x,2)+Math.pow(d3.event.y,2));
 						  
@@ -350,7 +357,7 @@ app
 						        .attr("cx", d.x)
 						        .attr("cy", d.y);
 						  }
-						  console.log(handle[1].x + "; " +handle[1].y )
+						  // console.log(handle[1].x + "; " +handle[1].y )
 
 						  var bIntersect = [];
 						  bIntersect = intersection(cX, cY, radius,  handle[1].x, handle[1].y, 20);
