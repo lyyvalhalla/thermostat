@@ -4,4 +4,4 @@ ipad landspace layout
 
 To run the app
 
-cd && gulp
+cd && npm install && gulp
